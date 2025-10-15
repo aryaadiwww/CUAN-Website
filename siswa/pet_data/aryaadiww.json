@@ -1,0 +1,15 @@
+{
+    "pet_type": "dino",
+    "pet_name": "Arya Ganteng",
+    "pet_desc": "Ganteng Banget Serius!",
+    "pet_level": 10,
+    "pet_food": 0,
+    "pet_happy": 75,
+    "pets": {
+        "": {
+            "food": 0,
+            "level": 1,
+            "happy": 5
+        }
+    }
+}

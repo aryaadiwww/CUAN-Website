@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daftar Akun CUAN</title>
+</head>
+<body>
+  <h2>Daftar Akun CUAN</h2>
+  <form action="register.php" method="POST">
+    <label>Username:</label><br>
+    <input type="text" name="username" required><br><br>
+
+    <label>Password:</label><br>
+    <input type="password" name="password" required><br><br>
+
+    <label>Peran:</label><br>
+    <select name="level" required>
+      <option value="">-- Pilih --</option>
+      <option value="siswa">Siswa</option>
+      <option value="guru">Guru</option>
+      <option value="ortu">Orang Tua</option>
+    </select><br><br>
+
+    <button type="submit">Daftar</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+    "pet_type": "kucing",
+    "pet_name": "Robot",
+    "pet_desc": "robotku",
+    "pet_level": 0,
+    "pet_food": 0,
+    "pet_happy": 0
+}

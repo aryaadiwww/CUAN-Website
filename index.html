@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CUAN - Cara Unik Anak Ngulik</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="responsive.css">
+  <style>
+    /* Landing page entrance animation */
+    .fadein-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(.77,0,.18,1), transform 0.8s cubic-bezier(.77,0,.18,1);
+    }
+    .fadein-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    :root {
+      --maroon: #B83556;
+      --parrot-pink: #DC97A5;
+      --ucla-blue: #55768C;
+      --lumber: #FADED2;
+      --milk-choco: #845747;
+      --white: #fff;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--lumber), var(--parrot-pink));
+      color: var(--milk-choco);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .hero-container {
+      background: url('img/landingpage.jpg') no-repeat center center/cover;
+      height: 100vh;
+      position: relative;
+    }
+
+    .hero-container::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.593);
+      z-index: 1;
+    }
+
+    .navbar {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+    }
+
+    .navbar .logo img {
+      height: 90px;
+    }
+
+    .nav-buttons a {
+      margin-left: 15px;
+      padding: 6px 14px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 600;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      font-size: 1rem;
+      box-shadow: 0 4px 16px 0 rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.3s, background 0.3s;
+    }
+
+    .btn.siswa {
+      background: linear-gradient(90deg, var(--ucla-blue) 70%, #6db3c6 100%);
+      box-shadow: 0 2px 12px 0 rgba(85,118,140,0.15);
+    }
+    .btn.guru {
+      background: linear-gradient(90deg, var(--maroon) 70%, #e05e7b 100%);
+      box-shadow: 0 2px 12px 0 rgba(184,53,86,0.15);
+    }
+    .btn.ortu {
+      background: linear-gradient(90deg, var(--milk-choco) 70%, #b08b6a 100%);
+      box-shadow: 0 2px 12px 0 rgba(132,87,71,0.15);
+    }
+
+    .nav-buttons a:hover {
+      transform: scale(1.09) rotate(-2deg);
+      box-shadow: 0 8px 24px 0 rgba(0,0,0,0.18);
+      opacity: 1;
+      background-position: right center;
+    }
+
+    .animated-btn .icon {
+      font-size: 1.5em;
+      margin-right: 12px;
+      display: flex;
+      align-items: center;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.10));
+      transition: transform 0.3s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+
+    .animated-btn:hover .icon {
+      transform: scale(1.18) rotate(-8deg);
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.18));
+    }
+
+    .animated-btn .btn-text {
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+    }
+
+    .animated-btn:hover .btn-text {
+      color: var(--lumber);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      top: 3%;
+      transform: translateY(20%);
+      color: white;
+    }
+
+    .hero-content h1 {
+      font-size: 65px;
+      font-weight: bold;
+    }
+
+    .hero-content .highlight {
+      color: var(--lumber);
+    }
+
+    .hero-content .badge {
+      display: inline-block;
+      margin-top: 15px;
+      background-color: rgb(251, 201, 210);
+      color: #5e3e33;
+      padding: 6px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-size: 20px;
+    }
+
+    .hero-content p {
+      margin-top: 15px;
+      font-size: 25px;
+      font-style: italic;
+      letter-spacing: 2px;
+    }
+
+    .btn-daftar {
+      margin-top: 60px;
+      display: inline-block;
+      background-color: #233b4b;
+      padding: 14px 32px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 50px;
+      transition: background-color 0.3s;
+      font-size: 25px;
+    }
+
+    .btn-daftar:hover {
+      background-color: var(--ucla-blue);
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.800);
+      justify-content: center;
+      align-items: center;
+      padding: 2vh;
+      /* display: flex; akan diaktifkan via JS saat popup dibuka */
+    }
+
+    .popup-content {
+      background: white;
+      border-radius: 22px;
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+      position: relative;
+      box-sizing: border-box;
+      padding: 2.5rem 2.2rem 2.2rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18);
+    }
+
+    .register-popup {
+      max-width: 380px;
+      padding: 2rem 2.5rem 2.5rem 2.5rem;
+      max-height: 90vh;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(184, 53, 86, 0.3) transparent;
+    }
+
+    /* Custom scrollbar styling for webkit browsers */
+    .register-popup::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .register-popup::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .register-popup::-webkit-scrollbar-thumb {
+      background: rgba(184, 53, 86, 0.3);
+      border-radius: 3px;
+      transition: background 0.3s ease;
+    }
+
+    .register-popup::-webkit-scrollbar-thumb:hover {
+      background: rgba(184, 53, 86, 0.6);
+    }
+
+    .popup .close {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 24px;
+      cursor: pointer;
+      color: red;
+    }
+
+    .form-row {
+      margin-bottom: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .double-field {
+      display: flex;
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+      width: 100%;
+    }
+
+    .double-field > div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .popup-content label {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--milk-choco);
+      font-size: 0.95rem;
+    }
+
+    .popup-content input,
+    .popup-content select {
+      padding: 12px;
+      border-radius: 8px;
+      border: 2px solid #e0e0e0;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .password-field input {
+      padding-right: 32px;
+    }
+
+    .popup-content input:focus,
+    .popup-content select:focus {
+      outline: none;
+      border-color: var(--maroon);
+    }
+
+    /* Password Field Styling */
+    .password-field {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .eye-btn {
+      position: absolute;
+      right: 0.5em;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin: 0;
+      width: 1.8em;
+      height: 1.8em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: none;
+      outline: none;
+    }
+
+    .eye-btn:hover {
+      background: none;
+    }
+
+    .eye-btn:active {
+      transform: translateY(-50%) scale(0.97);
+    }
+
+    .eye-icon {
+      font-size: 1.1em;
+      line-height: 1;
+      color: #666;
+      pointer-events: none;
+    }
+
+    .eye-btn.hidden .eye-icon {
+      opacity: 0.3;
+    }
+
+    /* Popup Icon Styling */
+    .popup-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      display: block;
+    }
+
+    .popup-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: var(--milk-choco);
+    }
+
+    /* Compact styling for register popup */
+    .register-popup .popup-icon {
+      font-size: 3.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .register-popup .popup-title {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .input-group {
+      margin-bottom: 1rem;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--milk-choco);
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: var(--maroon);
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 15px 0;
+      font-size: 1.18rem;
+      font-weight: 700;
+      border-radius: 16px;
+      transition: transform 0.18s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.25s, background 0.3s;
+      margin-top: 0.7rem;
+      box-shadow: 0 4px 18px 0 rgba(85,118,140,0.10);
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn-login.siswa {
+      background: linear-gradient(100deg, #43cea2 0%, #185a9d 100%);
+    }
+
+    .btn-login.guru {
+      background: linear-gradient(100deg, #ff512f 0%, #dd2476 100%);
+    }
+
+    .btn-login.ortu {
+      background: linear-gradient(90deg, var(--milk-choco) 70%, #b08b6a 100%);
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+      }
+      .hero-content h1 {
+        font-size: 32px;
+      }
+      .hero-content p {
+        font-size: 16px;
+      }
+      .nav-buttons {
+        margin-top: 1rem;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      /* Responsive password field */
+      .eye-btn {
+        width: 18px;
+        height: 18px;
+        right: 8px;
+      }
+      
+      .eye-icon {
+        font-size: 0.7rem;
+      }
+      
+      .password-field input {
+        padding-right: 30px;
+      }
+    }
+
+    .rain {
+      pointer-events: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 3;
+      overflow: hidden;
+    }
+    .raindrop {
+      position: absolute;
+      width: 2px;
+      height: 18px;
+      background: linear-gradient(to bottom, #fff 60%, rgba(255,255,255,0));
+      opacity: 0.5;
+      border-radius: 1px;
+      animation: raindrop-fall linear infinite;
+    }
+    @keyframes raindrop-fall {
+      0% { transform: translateY(-30px); opacity: 0.7; }
+      80% { opacity: 0.7; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    /* Success Popup Styling */
+    .success-popup {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.600);
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.1s ease-out;
+    }
+
+    .success-content {
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      border-radius: 20px;
+      padding: 2.5rem 3rem;
+      text-align: center;
+      box-shadow: 0 12px 32px rgba(76, 175, 80, 0.3);
+      max-width: 400px;
+      width: 90%;
+      position: relative;
+      animation: slideInUp 0.1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+
+    .success-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: bounceIn 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0.1s both;
+    }
+
+    .success-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.5rem;
+      animation: fadeInUp 0.1s ease-out 0.1s both;
+    }
+
+    .success-message {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.5;
+      animation: fadeInUp 0.1s ease-out 0.1s both;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-180deg);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.1) rotate(10deg);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media screen and (max-width: 480px) {
+      .success-content {
+        padding: 2rem 2rem;
+        max-width: 320px;
+      }
+      
+      .success-icon {
+        font-size: 3.5rem;
+      }
+      
+      .success-title {
+        font-size: 1.5rem;
+      }
+      
+      .success-message {
+        font-size: 1rem;
+      }
+    }
+
+        /* Register submit button style */
+    .btn-register {
+      width: 100%;
+      padding: 15px 0;
+      font-size: 1.18rem;
+      font-weight: 700;
+      border-radius: 16px;
+      background: linear-gradient(100deg, #ff7e5f 0%, #feb47b 100%);
+      color: #fff;
+      border: none;
+      margin-top: 0.7rem;
+      box-shadow: 0 4px 18px 0 rgba(255,126,95,0.10);
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      cursor: pointer;
+      transition: transform 0.18s cubic-bezier(.68,-0.55,.27,1.55), box-shadow 0.25s, background 0.3s;
+    }
+    .btn-register:hover {
+      background: linear-gradient(100deg, #feb47b 0%, #ff7e5f 100%);
+      transform: translateY(-3px) scale(1.03) rotate(-1deg);
+      box-shadow: 0 8px 28px 0 rgba(255,126,95,0.18);
+      filter: brightness(1.08);
+    }
+  </style>
+</head>
+<body>
+<body>
+  <!-- Rain Animation Layer -->
+  <div class="rain"></div>
+  <!-- Hero Background Image -->
+  <div class="hero-container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo fadein-up">
+        <img src="img/cuan.png" alt="Logo CUAN">
+      </div>
+      <div class="nav-buttons fadein-up">
+        <a href="#" class="btn siswa animated-btn" onclick="openPopup('popup-siswa')">
+          <span class="icon">👤</span>
+          <span class="btn-text">Login Siswa</span>
+        </a>
+        <a href="#" class="btn guru animated-btn" onclick="openPopup('popup-guru')">
+          <span class="icon">🗣</span>
+          <span class="btn-text">Login Guru</span>
+        </a>
+        <a href="#" class="btn ortu animated-btn" onclick="openPopup('popup-ortu')">
+          <span class="icon">👥</span>
+          <span class="btn-text">Login Orang Tua</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Text -->
+    <div class="hero-content">
+      <h1 class="fadein-up">Selamat Datang di <span class="highlight">CUAN!</span></h1>
+      <div class="badge fadein-up">CARA UNIK ANAK NGULIK</div>
+      <p class="fadein-up">"Belajar Asyik, Ngulik Unik, Bareng CUAN!"</p>
+      <a href="#" class="btn-daftar fadein-up" onclick="openPopup('registerPopup')">Daftar Akun</a>
+    </div>
+  </div>
+
+  <!-- Popup Login Siswa -->
+  <div class="popup" id="popup-siswa">
+    <div class="popup-content login-popup siswa-popup">
+      <span class="close" onclick="closePopup('popup-siswa')">&times;</span>
+      <div class="popup-icon">👤</div>
+      <h2 class="popup-title">Login Siswa</h2>
+      <form action="login.php" method="POST" autocomplete="off">
+        <input type="hidden" name="level" value="siswa">
+        <div class="input-group">
+          <label for="username-siswa">Username</label>
+          <input type="text" name="username" id="username-siswa" placeholder="Username" required autocomplete="username" />
+        </div>
+        <div class="input-group">
+          <label for="password-siswa">Password</label>
+          <input type="password" name="password" id="password-siswa" placeholder="Password" required autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn-login btn-register siswa">Masuk</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Popup Login Guru -->
+  <div class="popup" id="popup-guru">
+    <div class="popup-content login-popup guru-popup">
+      <span class="close" onclick="closePopup('popup-guru')">&times;</span>
+      <div class="popup-icon">🗣</div>
+      <h2 class="popup-title">Login Guru</h2>
+      <form action="login.php" method="POST" autocomplete="off">
+        <input type="hidden" name="level" value="guru">
+        <div class="input-group">
+          <label for="username-guru">Username</label>
+          <input type="text" name="username" id="username-guru" placeholder="Username" required autocomplete="username" />
+        </div>
+        <div class="input-group">
+          <label for="password-guru">Password</label>
+          <input type="password" name="password" id="password-guru" placeholder="Password" required autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn-login btn-register guru">Masuk</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Popup Login Orang Tua -->
+  <div class="popup" id="popup-ortu">
+    <div class="popup-content login-popup ortu-popup">
+      <span class="close" onclick="closePopup('popup-ortu')">&times;</span>
+      <div class="popup-icon">👥</div>
+      <h2 class="popup-title">Login Orang Tua</h2>
+      <form action="login.php" method="POST" autocomplete="off">
+        <input type="hidden" name="level" value="ortu">
+        <div class="input-group">
+          <label for="username-ortu">Username Orang Tua</label>
+          <input type="text" name="username" id="username-ortu" placeholder="Username Orang Tua" required autocomplete="username" />
+        </div>
+        <div class="input-group">
+          <label for="password-ortu">Password</label>
+          <input type="password" name="password" id="password-ortu" placeholder="Password" required autocomplete="current-password" />
+        </div>
+        <div class="input-group">
+          <label for="siswa_username">Username Siswa</label>
+          <select name="siswa_username" id="siswa-ortu-select" required>
+            <option value="">-- Pilih Nama Siswa --</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-login btn-register ortu">Masuk</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Register Popup -->
+  <div class="popup" id="registerPopup">
+    <div class="popup-content register-popup">
+      <span class="close" onclick="closePopup('registerPopup')">&times;</span>
+      <div class="popup-icon">📝</div>
+      <h2 class="popup-title">Daftar Akun</h2>
+<form action="register.php" method="POST">
+  <div class="form-row double-field">
+    <div>
+      <label for="nama">Nama Lengkap</label>
+      <input type="text" name="nama" id="nama" required />
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" required />
+  </div>
+
+  <div class="form-row">
+    <label for="password">Password</label>
+    <div class="password-field">
+      <input type="password" name="password" id="password" required />
+      <button type="button" class="eye-btn" onclick="togglePassword('password')">
+        <span class="eye-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label for="confirm_password">Konfirmasi Password</label>
+    <div class="password-field">
+      <input type="password" name="confirm_password" id="confirm_password" required />
+      <button type="button" class="eye-btn" onclick="togglePassword('confirm_password')">
+        <span class="eye-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label for="level">Daftar Sebagai</label>
+    <select name="level" id="level" required>
+      <option value="">-- Pilih Peran --</option>
+      <option value="siswa">Siswa</option>
+      <option value="guru">Guru</option>
+      <option value="ortu">Orang Tua</option>
+    </select>
+  </div>
+  <button type="submit" class="btn-register">Daftar</button>
+</form>
+    </div>
+  </div>
+
+  <!-- Success Popup -->
+  <div class="success-popup" id="successPopup">
+    <div class="success-content">
+      <div class="success-icon">✅</div>
+      <h2 class="success-title">Selamat Registrasi Berhasil!</h2>
+    </div>
+  </div>
+
+  <!-- Link ke file JavaScript -->
+  <script src="script.js"></script>
+  <script src="popup.js"></script>
+  <script src="success-popup.js"></script>
+  <script>
+  // Fetch daftar siswa untuk login ortu
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('api/daftar_siswa_api.php')
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === 'success') {
+          const select = document.getElementById('siswa-ortu-select');
+          data.data.forEach(siswa => {
+            const opt = document.createElement('option');
+            opt.value = siswa.username;
+            opt.textContent = siswa.nama + ' (' + siswa.username + ')';
+            select.appendChild(opt);
+          });
+        }
+      });
+  });
+  </script>
+</body>
+</body>
+</html>
+

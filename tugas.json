@@ -1,0 +1,86 @@
+[
+    {
+        "id": "tugas_68930b7785f292.24358144",
+        "title": "op9oppoppop",
+        "desc": "786767868676",
+        "deadline": "2025-08-08T14:59",
+        "teacher": "ziraaww",
+        "date": "2025-08-06 09:59:51",
+        "link": "https:\/\/drive.google.com\/drive\/folders\/1V_Z38CyTq0osYsiPFj0j_Q57MtzOxTLs"
+    },
+    {
+        "id": "tugas_68930b602948b2.91152648",
+        "title": "sadasada",
+        "desc": "dsasadsad",
+        "deadline": "2025-08-09T14:59",
+        "teacher": "ziraaww",
+        "date": "2025-08-06 09:59:28",
+        "link": "https:\/\/drive.google.com\/drive\/folders\/1V_Z38CyTq0osYsiPFj0j_Q57MtzOxTLs"
+    },
+    {
+        "id": "tugas_689306772eea21.82532505",
+        "title": "gadfadasd",
+        "desc": "dsaasdsaddsa",
+        "deadline": "2025-08-16T14:38",
+        "teacher": "ziraaww",
+        "date": "2025-08-06 09:38:31",
+        "link": "https:\/\/drive.google.com\/drive\/folders\/1V_Z38CyTq0osYsiPFj0j_Q57MtzOxTLs"
+    },
+    {
+        "id": "tugas_68930173832681.21805391",
+        "title": "asdasdsadass",
+        "desc": "dsadsasaddsdsdas",
+        "deadline": "2025-08-09T14:16",
+        "teacher": "ziraaww",
+        "date": "2025-08-06 09:17:07",
+        "link": "kehadiran.php:9 Failed to find a valid digest in the 'integrity' attribute for resource 'https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/font-awesome\/6.4.0\/css\/all.min.css' with computed SHA-512 integrity 'iecdLmaskl7CVkqkXNQ\/ZH\/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT\/E0iPtmFIB46ZmdtAc9eNBvH0H\/ZpiBw=='. The resource has been blocked.Understand this error kehadiran.php:706  GET http:\/\/localhost\/CUAN\/guru\/api\/kehadiran_api.php?bulan=1 404 (Not Found)"
+    },
+    {
+        "id": "tugas_6892d1781c0fe4.61334579",
+        "title": "asdsasda",
+        "desc": "ASDSASDADSASA",
+        "deadline": "2025-08-07T10:52",
+        "teacher": "ziraaww",
+        "date": "2025-08-06 05:52:24",
+        "filename": "tugas_6892d1781c81e9.85683746.pdf",
+        "original": "bahanajar_6892a02eb59897.79089345.pdf"
+    },
+    {
+        "id": "tugas_6892b89d7f1052.28265762",
+        "title": "asdkaakdmakldmlka",
+        "desc": "saldnalkdnksnklanda",
+        "deadline": "2025-08-08T11:07",
+        "teacher": "ziraaww",
+        "date": "2025-08-06 04:06:21",
+        "link": "https:\/\/drive.google.com\/drive\/folders\/1V_Z38CyTq0osYsiPFj0j_Q57MtzOxTLs"
+    },
+    {
+        "id": "tugas_6892b61024dd39.81310876",
+        "title": "Sendi & Otot",
+        "desc": "Jangan dikerjakan!",
+        "deadline": "2025-08-06T08:55",
+        "teacher": "ziraaww",
+        "date": "2025-08-06 03:55:28",
+        "filename": "tugas_6892b6102538b5.22750587.png",
+        "original": "burung.png"
+    },
+    {
+        "id": "tugas_6892b49e1e65b3.50471698",
+        "title": "monyet",
+        "desc": "bau",
+        "deadline": "2025-08-06T08:49",
+        "teacher": "ziraaww",
+        "date": "2025-08-06 03:49:18",
+        "link": "https:\/\/drive.google.com\/drive\/folders\/1V_Z38CyTq0osYsiPFj0j_Q57MtzOxTLs"
+    },
+    {
+        "id": "tugas_6892b3c2756d66.02059346",
+        "title": "Matamu",
+        "desc": "Matakuuu",
+        "deadline": "2025-09-24T08:45",
+        "teacher": "ziraaww",
+        "date": "2025-08-06 03:45:38",
+        "filename": "tugas_6892b3c2759601.67044041.pdf",
+        "original": "bahanajar_6892a02eb59897.79089345.pdf"
+    }
+]

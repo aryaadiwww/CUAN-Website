@@ -1,0 +1,29 @@
+[
+    {
+        "siswa_id": "aryaadiww",
+        "nama": "aryaadiww",
+        "jenis": "tugas",
+        "nilai": "99",
+        "mapel": "ipas",
+        "id": "nilai_68930129ed77a",
+        "timestamp": "2025-08-06 09:15:53"
+    },
+    {
+        "siswa_id": "aryaadiww",
+        "nama": "aryaadiww",
+        "jenis": "tugas",
+        "nilai": "100",
+        "mapel": "ipas",
+        "id": "nilai_689301d16b2a0",
+        "timestamp": "2025-08-06 09:18:41"
+    },
+    {
+        "siswa_id": "aryaadiww",
+        "nama": "aryaadiww",
+        "jenis": "tugas",
+        "nilai": "77",
+        "mapel": "ipas",
+        "id": "nilai_689306e78e69a",
+        "timestamp": "2025-08-06 09:40:23"
+    }
+]

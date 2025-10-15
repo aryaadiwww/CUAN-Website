@@ -1,0 +1,242 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Color Palette */
+:root {
+  --maroon: #B83556;
+  --pink: #DC97A5;
+  --blue: #55768C;
+  --beige: #FADED2;
+  --choco: #845747;
+}
+
+/* Hero Section */
+.hero-container {
+  background: url('img/landingpage.jpg') no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.hero-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Navbar */
+.navbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav-buttons a {
+  margin-left: 10px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn.siswa {
+  background-color: var(--blue);
+}
+
+.btn.guru {
+  background-color: var(--maroon);
+}
+
+.btn.ortu {
+  background-color: var(--choco);
+}
+
+.nav-buttons a:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  top: 20%;
+  transform: translateY(20%);
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: white;
+}
+
+.hero-content .highlight {
+  color: var(--beige);
+}
+
+.hero-content .badge {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: var(--pink);
+  color: white;
+  padding: 8px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.hero-content p {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.btn-daftar {
+  margin-top: 25px;
+  display: inline-block;
+  background-color: var(--pink);
+  padding: 12px 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.btn-daftar:hover {
+  background-color: var(--maroon);
+  transform: scale(1.05);
+}
+
+/* Popup */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+
+.popup-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 450px;
+  margin: 5% auto;
+  position: relative;
+  animation: popup-fade 0.3s ease;
+}
+
+@keyframes popup-fade {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.popup .close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--maroon);
+}
+
+/* Form Layout */
+.form-row {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.double-field {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.double-field > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-content label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.popup-content input,
+.popup-content select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.popup-content button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: var(--choco);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .navbar {
+    padding: 15px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-buttons a {
+    margin: 5px 0;
+  }
+
+  .double-field {
+    flex-direction: column;
+  }
+}
